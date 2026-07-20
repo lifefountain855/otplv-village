@@ -1,21 +1,71 @@
+import { useState } from 'react'
+import { Link, useLocation } from 'react-router-dom'
+
+const links = [
+  { to: '/', label: 'Home' },
+  { to: '/signup', label: 'Sign Up' },
+  { to: '/memberships', label: 'Memberships' },
+  { to: '/about', label: 'About Us' },
+  { to: '/contact', label: 'Contact' },
+]
+
 function Navbar() {
+  const location = useLocation()
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <nav className="bg-[#1a1a1a] px-8 py-4 flex items-center justify-between">
-      
+
       {/* Logo and site name */}
       <div className="flex items-center gap-4">
         <img src="/logo.png" alt="OTPLV Logo" className="w-12 h-12" />
-        <span className="text-white text-xl font-semibold">One True Pure Love Village</span>
+        <span className="text-white text-xl font-semibold hidden sm:block">One True Pure Love Village</span>
       </div>
 
-      {/* Navigation links */}
-      <div className="flex items-center gap-2 border border-pink-500 rounded-full px-4 py-2">
-        <a href="/" className="bg-pink-500 text-white px-4 py-1 rounded-full">Home</a>
-        <a href="/signup" className="text-gray-300 px-4 py-1 hover:text-white">Sign Up</a>
-        <a href="/memberships" className="text-gray-300 px-4 py-1 hover:text-white">Memberships</a>
-        <a href="/about" className="text-gray-300 px-4 py-1 hover:text-white">About Us</a>
-        <a href="/contact" className="text-gray-300 px-4 py-1 hover:text-white">Contact</a>
+      {/* Desktop Navigation */}
+      <div className="hidden md:flex items-center gap-2 border border-pink-500 rounded-full px-4 py-2">
+        {links.map((link) => (
+          <Link
+            key={link.to}
+            to={link.to}
+            className={
+              location.pathname === link.to
+                ? 'bg-pink-500 text-white px-4 py-1 rounded-full'
+                : 'text-gray-300 px-4 py-1 hover:text-white'
+            }
+          >
+            {link.label}
+          </Link>
+        ))}
       </div>
+
+      {/* Mobile hamburger button */}
+      <button
+        className="md:hidden text-white text-2xl"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? '✕' : '☰'}
+      </button>
+
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="absolute top-16 left-0 right-0 bg-[#1a1a1a] border-t border-gray-700 flex flex-col px-8 py-4 gap-4 z-50 md:hidden">
+          {links.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              onClick={() => setMenuOpen(false)}
+              className={
+                location.pathname === link.to
+                  ? 'text-pink-500 font-semibold'
+                  : 'text-gray-300 hover:text-white'
+              }
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+      )}
 
     </nav>
   )
