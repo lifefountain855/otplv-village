@@ -20,6 +20,40 @@ function SignUp() {
   const [syceColor, setSyceColor] = useState('#ec4899')
   const [form, setForm] = useState({ name: '', age: '', email: '', occupation: '' })
 
+  const handleSubmit = async () => {
+    if (!form.name || !form.email || !selectedPlan) {
+      alert('Please fill in your name, email, and select a membership plan.')
+      return
+    }
+
+    try {
+      const response = await fetch('http://localhost:3000/signup', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          age: form.age,
+          email: form.email,
+          occupation: form.occupation,
+          interests: selectedInterests,
+          plan: selectedPlan,
+          syceColor: syceColor,
+        })
+      })
+
+      const data = await response.json()
+
+      if (response.ok) {
+        alert('Welcome to the village! 🎉')
+      } else {
+        alert('Something went wrong: ' + data.error)
+      }
+    } catch (error) {
+      alert('Could not connect to server. Please try again.')
+      console.error(error)
+    }
+  }
+
   const toggleInterest = (item) => {
     setSelectedInterests(prev =>
       prev.includes(item) ? prev.filter(i => i !== item) : [...prev, item]
@@ -163,11 +197,10 @@ function SignUp() {
                   <button
                     key={item}
                     onClick={() => toggleInterest(item)}
-                    className={`px-4 py-2 rounded-full text-sm border transition ${
-                      selectedInterests.includes(item)
-                        ? 'bg-pink-500 border-pink-500 text-white'
-                        : 'border-gray-600 text-gray-300 hover:border-pink-500'
-                    }`}
+                    className={`px-4 py-2 rounded-full text-sm border transition ${selectedInterests.includes(item)
+                      ? 'bg-pink-500 border-pink-500 text-white'
+                      : 'border-gray-600 text-gray-300 hover:border-pink-500'
+                      }`}
                   >
                     {item}
                   </button>
@@ -191,11 +224,10 @@ function SignUp() {
               <button
                 key={plan.id}
                 onClick={() => setSelectedPlan(plan.id)}
-                className={`text-left p-6 rounded-2xl border transition ${
-                  selectedPlan === plan.id
-                    ? 'border-pink-500 bg-[#3a1a2e]'
-                    : 'border-gray-700 bg-[#2a2a2a] hover:border-gray-500'
-                }`}
+                className={`text-left p-6 rounded-2xl border transition ${selectedPlan === plan.id
+                  ? 'border-pink-500 bg-[#3a1a2e]'
+                  : 'border-gray-700 bg-[#2a2a2a] hover:border-gray-500'
+                  }`}
               >
                 <p className="text-white font-semibold mb-1">{plan.name}</p>
                 <p className="text-pink-400 text-sm mb-1">{plan.price}</p>
@@ -206,7 +238,10 @@ function SignUp() {
         </div>
 
         {/* Submit */}
-        <button className="w-full bg-pink-500 text-white py-5 rounded-full text-lg font-semibold flex items-center justify-center gap-2 hover:bg-pink-600 transition">
+        <button 
+          onClick={handleSubmit}
+          className="w-full bg-pink-500 text-white py-5 rounded-full text-lg font-semibold flex items-center justify-center gap-2 hover:bg-pink-600 transition"
+        >
           Join the Village →
         </button>
         <p className="text-center text-gray-500 text-sm">

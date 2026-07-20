@@ -70,7 +70,7 @@ function Home() {
   const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
-    <div className="bg-[#1a1a1a]">
+    <div className="bg-[#1a1a1a] page-transition">
 
       {/* Hero Section */}
       <section
