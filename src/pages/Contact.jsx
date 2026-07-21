@@ -29,6 +29,7 @@ function Contact() {
       }
     }
     return (
+
       <div
         className="bg-[#1a1a1a] min-h-screen"
         style={{ background: 'radial-gradient(ellipse at top, #3a1a2e 0%, #1a1a1a 60%)' }}

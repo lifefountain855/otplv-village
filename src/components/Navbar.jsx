@@ -17,10 +17,10 @@ function Navbar() {
     <nav className="bg-[#1a1a1a] px-8 py-4 flex items-center justify-between">
 
       {/* Logo and site name */}
-      <div className="flex items-center gap-4">
+      <Link to="/" className="flex items-center gap-4">
         <img src="/logo.png" alt="OTPLV Logo" className="w-12 h-12" />
         <span className="text-white text-xl font-semibold hidden sm:block">One True Pure Love Village</span>
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <div className="hidden md:flex items-center gap-2 border border-pink-500 rounded-full px-4 py-2">

@@ -1,12 +1,11 @@
 function Footer() {
   return (
     <footer className="bg-[#1a1a1a] text-gray-300 px-8 py-10 mt-auto">
-      
-      <div className="flex justify-between items-start">
-        
+      <div className="flex flex-col md:flex-row justify-between items-start gap-8">
+
         {/* Logo and name */}
         <div className="flex items-center gap-4">
-          <img src="/logo.png" alt="OTPLV Logo" className="w-10 h-10" />
+          <img src="/logo.png" alt="OTPLV Logo" className="w-10 h-10 flex-shrink-0" />
           <span className="text-white font-semibold text-lg">One True Pure Love Village</span>
         </div>
 
@@ -23,12 +22,11 @@ function Footer() {
         {/* Contact info */}
         <div className="flex flex-col gap-2">
           <span className="text-white font-semibold mb-1">Contact</span>
-          <span>Email: hello@otplv.com</span>
-          <span>Phone: (123) 456-7890</span>
+          <span>Email: unclewallysworld@gmail.com</span>
+          <span>Phone: (201)-417-7488</span>
         </div>
 
       </div>
-
     </footer>
   )
 }
