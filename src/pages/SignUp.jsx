@@ -93,9 +93,9 @@ function SignUp() {
           <p className="text-gray-400 text-lg max-w-md">
             You're now part of One True Pure Love Village. We'll be in touch soon.
           </p>
-          <a href="/" className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-600 transition">
+          <Link to="/" className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold hover:bg-pink-600 transition">
             Back to Home
-          </a>
+          </Link>
         </div>
       ) : (
         <section className="px-16 pb-24 max-w-3xl mx-auto flex flex-col gap-8">

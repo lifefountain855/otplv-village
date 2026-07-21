@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const testimonials = [
   {
@@ -101,12 +102,12 @@ function Home() {
             Desiring to be in right relationship — building confidence through a loving, Godly character. One vision. One mind. One agreement.
           </p>
           <div className="flex gap-4">
-            <a href="/signup" className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600">
-              Join the Village →
-            </a>
-            <a href="/memberships" className="border border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition">
+            <Link to="/signup" className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600">
+              Join the Village
+            </Link>
+            <Link to="/memberships" className="border border-white text-white px-8 py-4 rounded-full font-semibold hover:bg-white hover:text-black transition">
               Explore Memberships
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -288,9 +289,9 @@ function Home() {
       {/* CTA Section */}
       <section className="bg-[#111111] py-24 flex flex-col items-center gap-6">
         <p className="text-gray-400 text-lg">Ready to write your own story?</p>
-        <a href="/signup" className="bg-pink-500 text-white px-10 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600 transition">
+        <Link to="/signup" className="bg-pink-500 text-white px-10 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600 transition">
           Join the Village →
-        </a>
+        </Link>
       </section>
 
     </div>
