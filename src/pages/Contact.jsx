@@ -10,7 +10,7 @@ function Contact() {
       return
     }
       try {
-        const response = await fetch('http://localhost:3000/contact', {
+        const response = await fetch('otplv-backend-production.up.railway.app/comtact', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(form)
