@@ -28,7 +28,7 @@ function SignUp() {
     }
 
     try {
-      const response = await fetch('otplv-backend-production.up.railway.app/signup', {
+      const response = await fetch('https://otplv-backend-production.up.railway.app/signup', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
