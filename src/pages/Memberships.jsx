@@ -67,7 +67,7 @@ function Memberships() {
     <div className="bg-[#1a1a1a] min-h-screen">
 
       {/* Hero */}
-      <section className="py-24 px-16 text-center"
+      <section className="py-24 px-8 sm:px-16 text-center"
         style={{
           background: 'radial-gradient(ellipse at top, #3a1a2e 0%, #1a1a1a 60%)',
         }}
@@ -83,8 +83,8 @@ function Memberships() {
       </section>
 
       {/* Membership Cards */}
-      <section className="px-16 pb-8">
-        <div className="grid grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <section className="px-8 sm:px-16 pb-8">
+        <div className="flex flex-col md:flex-row gap-10 max-w-5xl mx-auto">
           {plans.map((plan) => (
             <div
               key={plan.id}
@@ -134,13 +134,13 @@ function Memberships() {
             </div>
           ))}
         </div>
-        <p className="text-center text-gray-500 mt-8">Select a membership above to continue.</p>
+        <p className="text-center text-gray-500 italic mt-2">Select a membership above to continue.</p>
       </section>
 
       {/* What Lives Inside */}
-      <section className="px-16 py-24">
-        <p className="text-gray-500 text-xs tracking-widest text-center mb-12">WHAT LIVES INSIDE THE VILLAGE</p>
-        <div className="grid grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <section className="px-8 sm:px-16 py-24">
+        <p className="text-gray-300 text-lg tracking-widest text-center mb-8 md:mb-12">WHAT LIVES INSIDE THE VILLAGE</p>
+        <div className="flex flex-col md:flex-row gap-4 max-w-5xl mx-auto">
           {centers.map((center) => (
             <div key={center.name} className="bg-[#2a2a2a] border border-gray-700 rounded-2xl p-8">
               <div className="w-12 h-12 bg-[#3a3a3a] rounded-xl flex items-center justify-center text-2xl mb-6">

@@ -75,7 +75,7 @@ function SignUp() {
       style={{ background: 'radial-gradient(ellipse at top, #3a1a2e 0%, #1a1a1a 60%)' }}
     >
       {/* Hero */}
-      <section className="pt-24 pb-12 px-16 text-center">
+      <section className="pt-24 pb-12 px-8 sm:px-16 text-center">
         <p className="text-pink-500 text-xs tracking-widest mb-6">BEGIN YOUR JOURNEY</p>
         <h1 className="text-6xl font-serif text-white leading-tight mb-4">
           Join the Village. <br />
@@ -98,16 +98,16 @@ function SignUp() {
           </Link>
         </div>
       ) : (
-        <section className="px-16 pb-24 max-w-3xl mx-auto flex flex-col gap-8">
+        <section className="px-8 sm:px-16 pb-24 max-w-3xl mx-auto flex flex-col gap-8">
 
           {/* SYCE Color */}
           <div className="bg-[#2a2a2a] border border-gray-700 rounded-2xl p-8">
             <p className="text-pink-500 text-xs tracking-widest mb-2">SYCE COLOR</p>
             <p className="text-gray-400 text-sm mb-6">Your personal signature color — it represents your presence in the village.</p>
-            <div className="flex items-center gap-6 mb-6">
-              <div className="w-20 h-20 rounded-2xl flex-shrink-0" style={{ backgroundColor: syceColor }} />
-              <div className="flex flex-col gap-3 flex-1">
-                <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-center gap-6 mb-6">
+              <div className="w-20 h-20 rounded-2xl shrink-0" style={{ backgroundColor: syceColor }} />
+              <div className="flex flex-col gap-3 w-full">
+                <div className="grid items-center grid-cols-1 sm:flex gap-3">
                   <span className="text-gray-400 text-sm">HEX</span>
                   <input
                     type="text"
@@ -135,7 +135,7 @@ function SignUp() {
                     type="range"
                     min="0"
                     max="360"
-                    className="flex-1 accent-pink-500"
+                    className="grow accent-pink-500"
                     onChange={(e) => {
                       const h = e.target.value
                       setSyceColor(`hsl(${h}, 70%, 50%)`)
@@ -146,7 +146,7 @@ function SignUp() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-gray-400 text-xs tracking-widest">PRESETS</span>
-              <div className="flex gap-2">
+              <div className="grid grid-cols-[repeat(auto-fill,minmax(30px,1fr))] gap-2 flex-1">
                 {colorPresets.map((color) => (
                   <button
                     key={color}
@@ -160,8 +160,8 @@ function SignUp() {
           </div>
 
           {/* Basic Info */}
-          <div className="grid grid-cols-2 gap-4">
-            <div className="flex flex-col gap-2">
+          <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col gap-2 grow">
               <label className="text-gray-400 text-xs tracking-widest">FULL NAME <span className="text-pink-500">*</span></label>
               <input
                 type="text"

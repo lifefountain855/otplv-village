@@ -1,6 +1,6 @@
 function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-gray-300 px-8 py-10 mt-auto">
+    <footer className="bg-[#161616] text-gray-300 px-8 py-10 mt-auto border-t border-neutral-700">
       <div className="flex flex-col md:flex-row justify-between items-start gap-8">
 
         {/* Logo and name */}
@@ -22,8 +22,8 @@ function Footer() {
         {/* Contact info */}
         <div className="flex flex-col gap-2">
           <span className="text-white font-semibold mb-1">Contact</span>
-          <span>Email: unclewallysworld@gmail.com</span>
-          <span>Phone: (201)-417-7488</span>
+          <span>Email: <a className='underline' href='mailto:unclewallysworld@gmail.com'>unclewallysworld@gmail.com</a></span>
+          <span>Phone: <a className='underline' href='tel:+12014177488'>(201)-417-7488</a></span>
         </div>
 
       </div>

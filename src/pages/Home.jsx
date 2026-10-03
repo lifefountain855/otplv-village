@@ -75,7 +75,7 @@ function Home() {
 
       {/* Hero Section */}
       <section
-        className="relative min-h-screen flex items-center px-16 py-20"
+        className="relative min-h-screen flex items-center px-8 sm:px-16 py-20"
         style={{
           backgroundImage: `linear-gradient(to right, rgba(0,0,0,0.85) 40%, rgba(0,0,0,0.4) 100%), url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1400')`,
           backgroundSize: 'cover',
@@ -101,7 +101,7 @@ function Home() {
           <p className="text-gray-400 text-base mb-10">
             Desiring to be in right relationship — building confidence through a loving, Godly character. One vision. One mind. One agreement.
           </p>
-          <div className="flex gap-4">
+          <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link to="/signup" className="bg-pink-500 text-white px-8 py-4 rounded-full font-semibold flex items-center gap-2 hover:bg-pink-600">
               Join the Village
             </Link>
@@ -112,27 +112,19 @@ function Home() {
         </div>
       </section>
 
-      <section className="bg-[#111111] py-8 px-16 grid grid-cols-4 divide-x divide-gray-700">
-        <div className="px-8">
-          <p className="text-pink-500 text-xs tracking-widest mb-2">OUR FOUNDATION</p>
-          <p className="text-white text-xl font-semibold">Faith & Purpose</p>
+      <section className="bg-[#111111] py-8 px-8 sm:px-16 grid grid-cols-1 md:grid-cols-4 divide-y md:divide-y-0 md:divide-x divide-gray-700">
+        {[
+          ["Our Foundation","Faith & Purpose"],["Our Method","Unity of Vision"],["Our Promise","Charity Never Fails"],["Our Community","All Are Welcome"],
+        ].map((t,i)=>(
+          <div className="px-8 py-4 md:py-0">
+            <p className="text-pink-500 text-xs tracking-widest md:mb-2 uppercase">{t[0]}</p>
+            <p className="text-white text-xl font-semibold">{t[1]}</p>
         </div>
-        <div className="px-8">
-          <p className="text-pink-500 text-xs tracking-widest mb-2">OUR METHOD</p>
-          <p className="text-white text-xl font-semibold">Unity of Vision</p>
-        </div>
-        <div className="px-8">
-          <p className="text-pink-500 text-xs tracking-widest mb-2">OUR PROMISE</p>
-          <p className="text-white text-xl font-semibold">Charity Never Fails</p>
-        </div>
-        <div className="px-8">
-          <p className="text-pink-500 text-xs tracking-widest mb-2">OUR COMMUNITY</p>
-          <p className="text-white text-xl font-semibold">All Are Welcome</p>
-        </div>
+        ))}
       </section>
 
       {/* Founder Video Section */}
-      <section className="bg-[#1a1a1a] px-16 py-24 flex items-center gap-16">
+      <section className="bg-[#1a1a1a] px-8 sm:px-16 py-24 flex flex-col md:flex-row items-center gap-16">
 
         {/* Left side text */}
         <div className="flex-1">
@@ -171,7 +163,7 @@ function Home() {
       </section>
 
       {/* Centers Slider */}
-      <section className="bg-[#111111] px-16 py-24">
+      <section className="bg-[#111111] px-8 sm:px-16 py-24">
         <p className="text-pink-500 text-xs tracking-widest text-center mb-2">INSIDE THE VILLAGE</p>
         <h2 className="text-5xl font-serif text-white text-center mb-12">Explore Our Centers</h2>
 
@@ -180,7 +172,7 @@ function Home() {
           <img
             src={slides[currentSlide].image}
             alt={slides[currentSlide].title}
-            className="w-full h-[500px] object-cover"
+            className="w-full h-125 object-cover"
           />
           <div className="absolute inset-0 bg-black/40" />
 
@@ -228,19 +220,20 @@ function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="bg-[#1a1a1a] px-16 py-24">
+      <section className="bg-[#1a1a1a] px-8 sm:px-16 py-24">
         <p className="text-pink-500 text-xs tracking-widest text-center mb-4">VILLAGE VOICES</p>
         <h2 className="text-5xl font-serif text-white text-center mb-4">What Members Are Saying</h2>
         <p className="text-gray-400 text-center mb-16">
           From Atlanta to Detroit, people are finding their center — and their community.
         </p>
 
-        <div className="grid grid-cols-3 gap-4 mb-4 items-start">
-          {testimonials.slice(0, 3).map((t, index) => (
-            <div key={index} className="bg-[#2a2a2a] border border-gray-700 rounded-2xl p-6 flex flex-col justify-between min-w-0">              <div>
-              <p className="text-pink-500 text-4xl font-serif mb-4">"</p>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.quote}</p>
-            </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 md:flex-row gap-4 mb-4 mx-auto max-w-5xl items-start">
+          {testimonials.map((t, index) => (
+            <div key={index} className="bg-[#2a2a2a] border border-gray-700 rounded-2xl p-6 h-full flex flex-col justify-between min-w-0">
+              <div>
+                <p className="text-pink-500 text-4xl font-serif mb-4">"</p>
+                <p className="text-gray-300 text-sm leading-relaxed mb-6">{t.quote}</p>
+              </div>
               <div>
                 <div className="border-t border-gray-600 mb-4" />
                 <div className="flex items-center justify-between flex-wrap gap-2">
@@ -260,7 +253,7 @@ function Home() {
           ))}
         </div>
 
-        <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
+        {/* <div className="grid grid-cols-2 gap-4 max-w-2xl mx-auto">
           {testimonials.slice(3).map((t, index) => (
             <div key={index} className="bg-[#2a2a2a] border border-gray-700 rounded-2xl p-6 flex flex-col justify-between min-w-0">              <div>
               <p className="text-pink-500 text-4xl font-serif mb-4">"</p>
@@ -283,7 +276,7 @@ function Home() {
               </div>
             </div>
           ))}
-        </div>
+        </div> */}
       </section>
 
       {/* CTA Section */}

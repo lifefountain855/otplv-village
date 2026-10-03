@@ -8,7 +8,7 @@ function AboutUs() {
     >
 
       {/* Hero */}
-      <section className="pt-16 pb-8 px-16">
+      <section className="pt-16 pb-8 px-8 sm:px-16">
         <p className="text-pink-500 text-xs tracking-widest mb-4">THE HEART BEHIND THE VILLAGE</p>
         <h1 className="text-6xl font-serif text-white mb-12">Meet the Founder</h1>
 
@@ -23,7 +23,7 @@ function AboutUs() {
       </section>
 
       {/* Name card */}
-      <section className="px-16 py-6">
+      <section className="px-8 sm:px-16 py-6">
         <div className="bg-[#2a2a2a] border border-gray-700 rounded-2xl p-6">
           <h2 className="text-white text-2xl font-serif mb-1">Wally Iwanciw</h2>
           <p className="text-pink-400 text-sm mb-1">Owner</p>
@@ -32,7 +32,7 @@ function AboutUs() {
       </section>
 
       {/* Bio */}
-      <section className="px-16 py-12">
+      <section className="px-8 sm:px-16 py-12">
         <h2 className="text-4xl font-serif text-white leading-tight mb-8">
           Building purpose-driven community <span className="italic">one relationship at a time.</span>
         </h2>
@@ -63,7 +63,7 @@ function AboutUs() {
 
         {/* More coming soon */}
         <p className="text-pink-500 text-xs tracking-widest mb-8">MORE COMING SOON</p>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="flex flex-col md:flex-row gap-6">
           {[
             {
               title: 'Background & Story',

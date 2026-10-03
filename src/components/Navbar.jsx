@@ -14,7 +14,7 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav className="bg-[#1a1a1a] px-8 py-4 flex items-center justify-between">
+    <nav className="bg-[#161616] px-8 py-4 border-b border-neutral-700 flex items-center justify-between">
 
       {/* Logo and site name */}
       <Link to="/" className="flex items-center gap-4">

@@ -46,8 +46,8 @@ function Contact() {
         <p className="text-gray-400 text-lg">We would love to hear from you.</p>
       </section>
 
-      <section className="px-16 pb-24 max-w-5xl mx-auto">
-        <div className="grid grid-cols-2 gap-16 items-start">
+      <section className="px-8 sm:px-16 pb-24 max-w-5xl mx-auto">
+        <div className="flex justify-center gap-16 flex-col md:flex-row px-auto">
 
           <div className="flex flex-col gap-8">
             <div>
@@ -83,7 +83,7 @@ function Contact() {
               </button>
             </div>
           ) : (
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-6 grow">
               <div className="flex flex-col gap-2">
                 <label className="text-gray-400 text-xs tracking-widest">FULL NAME <span className="text-pink-500">*</span></label>
                 <input
