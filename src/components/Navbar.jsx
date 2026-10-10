@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import Logo from './Logo'
 
 const links = [
   { to: '/', label: 'Home' },
   { to: '/signup', label: 'Sign Up' },
-  { to: '/memberships', label: 'Memberships' },
+  { to: '/memberships', label: 'Membership' },
   { to: '/about', label: 'About Us' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -18,7 +19,7 @@ function Navbar() {
 
       {/* Logo and site name */}
       <Link to="/" className="flex items-center gap-4">
-        <img src="/logo.png" alt="OTPLV Logo" className="w-12 h-12" />
+        <Logo size={50} glow={false} backgroundColor="#eee" backgroundRadius='10' pathOptions={[{},{},{fill:"#ff0000",strokeWidth:"2",strokeLinecap:"round"},{}]}/>
         <span className="text-white text-xl font-semibold hidden sm:block">One True Pure Love Village</span>
       </Link>
 

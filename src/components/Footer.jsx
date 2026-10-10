@@ -1,3 +1,5 @@
+import Logo from "./Logo"
+
 function Footer() {
   return (
     <footer className="bg-[#161616] text-gray-300 px-8 py-10 mt-auto border-t border-neutral-700">
@@ -5,7 +7,7 @@ function Footer() {
 
         {/* Logo and name */}
         <div className="flex items-center gap-4">
-          <img src="/logo.png" alt="OTPLV Logo" className="w-10 h-10 flex-shrink-0" />
+          <Logo size={100} backgroundColor={"none"} glow={false} pathOptions={[{stroke:"#ddd"},{stroke:"#ddd"},{fill:"#aa0000",stroke:"none"},{stroke:"#ddd"}]}/>
           <span className="text-white font-semibold text-lg">One True Pure Love Village</span>
         </div>
 
