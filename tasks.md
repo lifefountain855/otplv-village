@@ -1,6 +1,9 @@
 - [ ] import media and video playback to replace template
 - [ ] replace reviews
-- [ ] stripe payments - use own account for now
+- [ ] membership selection permenance?
+- [ ] stripe payments
+  - [x] frontend
+  - [ ] backend
 
 ### - mobile friendly
   - [x] contact form
