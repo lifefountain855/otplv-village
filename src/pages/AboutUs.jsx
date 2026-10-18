@@ -13,12 +13,8 @@ function AboutUs() {
         <h1 className="text-6xl font-serif text-white mb-12">Meet the Founder</h1>
 
         {/* Photo placeholder */}
-        <div className="bg-[#2a2a2a] border border-gray-700 rounded-2xl w-full h-96 flex flex-col items-center justify-end pb-8 gap-3">
-          <div className="w-16 h-16 bg-pink-800 border-2 border-pink-500 rounded-full flex items-center justify-center">
-            <span className="text-pink-300 text-2xl font-serif">W</span>
-          </div>
-          <p className="text-gray-400 text-sm">Photo coming soon</p>
-          <p className="text-gray-500 text-xs">Wally Iwanciw</p>
+        <div className="bg-[#2a2a2a] border max-w-200 border-gray-700 rounded-2xl p-5 mx-auto">
+         <img src='wally.png' className="aspect-3/4 sm:aspect-3/2 rounded-2xl object-cover object-center"/>
         </div>
       </section>
 

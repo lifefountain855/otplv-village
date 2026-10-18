@@ -116,7 +116,7 @@ function Home() {
         {[
           ["Our Foundation","Faith & Purpose"],["Our Method","Unity of Vision"],["Our Promise","Charity Never Fails"],["Our Community","All Are Welcome"],
         ].map((t,i)=>(
-          <div className="px-8 py-4 md:py-0">
+          <div key={`pillar_${i}`} className="px-8 py-4 md:py-0">
             <p className="text-pink-500 text-xs tracking-widest md:mb-2 uppercase">{t[0]}</p>
             <p className="text-white text-xl font-semibold">{t[1]}</p>
         </div>
@@ -143,21 +143,15 @@ function Home() {
 
         {/* Right side video placeholder */}
         <div className="flex-1 relative rounded-2xl overflow-hidden">
-          <img
-            src="https://images.unsplash.com/photo-1515187029135-18ee286d815b?w=800"
+          <video
             alt="Founder video"
             className="w-full h-80 object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center gap-2">
-            <div className="w-16 h-16 bg-pink-500/80 rounded-full flex items-center justify-center">
-              <span className="text-white text-2xl">▶</span>
-            </div>
-            <p className="text-white text-sm tracking-widest">WATCH THE STORY</p>
-          </div>
-          <div className="absolute bottom-4 left-4">
-            <p className="text-white font-semibold">Village Founder</p>
-            <p className="text-gray-300 text-xs tracking-widest">ONE TRUE PURE LOVE VILLAGE</p>
-          </div>
+            controls
+            autoPlay
+            muted>
+              <source src="showcase_video.mp4" type="video/mp4"/>
+              Your Browser does not support the video tag.
+            </video>
         </div>
 
       </section>
