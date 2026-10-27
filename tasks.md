@@ -14,8 +14,6 @@
     - [x] reviews
 
 ### - remake logo into svg
-  - [ ] change favicon
-
-- [ ] color picker keep hex value, also laggy, use localstorage till sumbit?
+  - [x] change favicon
 
 - potentially decent sitewide animations?
